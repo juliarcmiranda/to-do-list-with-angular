@@ -1,10 +1,16 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AppRoutingModule } from './../app-routing.module';
 import { Injectable } from '@angular/core';
 import { delay, of, Observable } from 'rxjs';
 
+import { Router } from '@angular/router';
 import { Task, TaskPriority } from './../models/task.model';
 
-const URL = 'http://madsti.com.br:9099/swagger-ui.html';
+const httpOptions = {
+  headers: new HttpHeaders({
+    'content-type':  'application/json',
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -12,38 +18,29 @@ const URL = 'http://madsti.com.br:9099/swagger-ui.html';
 
 export class TodoListService {
 
-  constructor(private http: HttpClient) {
-    console.log("Serviço todo-list instanciado!")
+  taskList: Task[] = [];
+  router: Router;
+  constructor(private http: HttpClient, router: Router) {
+    this.router = router;
   }
 
-  getTasks() {
-    /* const options = {
-      headers: {
-        Authorization: "Basic " + btoa("admin:password")
-      }
-    };
-    return this.http.get<Task[]>(URL); */
-    let obs = of([
-      {
-        id: '1',
-        title: "Assistir a aula do curso Santander Coders",
-        description: "Devo reassistir a última aula de Angular para revisar o conteúdo.",
-        dueDate: new Date(),
-        priority: TaskPriority.Low,
-        labels: [],
-        done: false,
-      },
-      {
-        id: '2',
-        title: "Fazer a Atividade 05 da Forca 2.0",
-        description: "Devo reunir com meu grupo, implementar e testar o trabalho.",
-        dueDate: new Date(),
-        priority: TaskPriority.High,
-        labels: [],
-        done: false,
-      }
-    ]);
-    
-    return obs.pipe(delay(2000));
+  getTasks(): Observable<Task[]> {
+    return this.http.get<Task[]>('http://localhost:3000/tasks');
+  }
+
+  addTask(task: Task): Observable<any> {
+    this.router.navigate(['']);
+    return this.http.post('http://localhost:3000/tasks', task, httpOptions);
+  }
+
+  updateTask(task: Task): Observable<any> {
+    let url = 'http://localhost:3000/tasks/' + task.id.toString();
+    return this.http.put(url, task, httpOptions);
+}
+  
+
+
+  deleteTask(){
+        
   }
   }

@@ -13,10 +13,13 @@ import { PagesModule } from './pages/pages.module';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
 
 import { AppComponent } from './app.component';
+import { UpdateTaskComponent } from './pages/update-task/update-task.component';
+
 
 @NgModule({ 
   declarations: [
-    AppComponent
+    AppComponent,
+    UpdateTaskComponent
   ],
   imports: [
     BrowserModule,

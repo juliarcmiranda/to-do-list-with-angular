@@ -1,6 +1,7 @@
-import { Task, TaskPriority } from './models/task.model';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CreateTaskComponent } from './pages/create-task/create-task.component';
+import { Task, TaskPriority } from './models/task.model';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'To Do List App';
   public todos: Task[] = [];  
-  public title: String = 'To-Do List';
-
+  
   taskList: Task[] = [];
 
-  constructor() {
+  constructor() { } 
 
-  }
 }
+

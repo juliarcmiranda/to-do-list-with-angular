@@ -13,15 +13,14 @@ import { Task, TaskPriority } from './../../../models/task.model';
 
 export class TodoListItemComponent implements OnInit {
 
-  @Input('taskObj') task: Task = {
+  @Input('taskObj') task?: Task;
+  /* {
     id: '',
     title: '',
     description: '',
-    dueDate: new Date,
     priority: TaskPriority.Low,
-    labels: [],
     done: false
-  }
+  } */
   @Input() taskId?: number;
   @Output() warnTaskWasDone: EventEmitter<any> = new EventEmitter();
   @ViewChild('checkboxInput') checkboxInput?: ElementRef;

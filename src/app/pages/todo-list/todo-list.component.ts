@@ -34,7 +34,6 @@ export class TodoListComponent implements OnInit {
 /*     setTimeout(() => sub.unsubscribe(), 2100); */
   }
 
-
   markTaskAsDone(obj: { id: number; value: boolean }) {
     /* let id = obj.id;
     const done = obj.value;

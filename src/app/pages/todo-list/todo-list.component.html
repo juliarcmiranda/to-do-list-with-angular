@@ -1,11 +1,9 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>Task List</mat-card-title>
-        <mat-card-subtitle>Undone Tasks</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content *ngIf="tasksList$ | async as tasksList; else displaySpinner">
+      <mat-card-content *ngIf="tasksList$ | async as tasksList; else displaySpinner" class="mat-container">
         <pages-todo-list-item *ngFor="let task of tasksList; index as id" [taskObj]="task" [taskId]="id" (warnTaskWasDone)="markTaskAsDone($event)">
-          <b>Anotações da Tarefa {{ id + 1 }}</b>
         </pages-todo-list-item>
       </mat-card-content>
       <ng-template #displaySpinner>

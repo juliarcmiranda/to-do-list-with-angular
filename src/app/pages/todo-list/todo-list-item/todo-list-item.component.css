@@ -1,16 +1,28 @@
 .bg-red {
-background-color: #ffbdbd;
+    background-color: #c90606;
 }
 .bg-orange {
-    background-color: #fcdfbb;
+    background-color: #d47e13;
 }
 .bg-yellow {
-    background-color: #fcfbbb;
+    background-color: #fceb51;
 }
 
 .item-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
+}
+
+
+#priority-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.button-place {
+    margin-left: 15px;
 }

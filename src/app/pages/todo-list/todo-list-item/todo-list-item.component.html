@@ -1,19 +1,29 @@
 <div *ngIf="task" class="item-container">
-<mat-checkbox #checkboxInput [checked]="task.done" (change)="markAsDone($event)"></mat-checkbox>
-<mat-expansion-panel [ngClass]="getClass()" *ngIf="task" style="flex: 1; margin-left: 10px;">
-    <mat-expansion-panel-header>
-        <mat-panel-title>
-            {{ task.title }}
-        </mat-panel-title>
-        <mat-panel-description>
-            {{ task.description }}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <ul>
-        <li>Entrega: {{ task.dueDate }}</li>
-        <li>Prioridade: {{ task.priority }}</li>
-        <li>Feita: {{ task.done? 'Sim' : 'Não' }}</li>
-    </ul>
-    <ng-content></ng-content>
-</mat-expansion-panel>
+    <mat-checkbox #checkboxInput [checked]="task.done" (change)="markAsDone($event)"></mat-checkbox>
+    <mat-expansion-panel *ngIf="task" style="flex: 1; margin-left: 10px;">
+        <mat-expansion-panel-header>
+            <span id="priority-color" [ngClass]="getClass()"></span>
+
+            <mat-panel-title>
+                {{ task.title }}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{ task.description }}
+            </mat-panel-description>
+
+        </mat-expansion-panel-header>
+        <ul>
+            <li>Priority: {{ task.priority }}</li>
+            <li>Done: {{ task.done? 'Yes' : 'No' }}</li>
+        </ul>
+        <ng-content></ng-content>
+    </mat-expansion-panel>
+    <div class="button-place">
+        <button mat-icon-button [routerLink]="['updatetask', task.id]">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
 </div>
