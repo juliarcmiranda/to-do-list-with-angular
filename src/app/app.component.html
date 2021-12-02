@@ -1,20 +1,4 @@
 <todo-header>Projeto To Do List</todo-header>
-<!--
-  <p *ngFor="let todo of todos">{{todo.id}}. {{todo.title}} | 
-    <button *ngIf="!todo.done" (click)="markAsDone(todo)">concluir</button>
-    <button *ngIf="todo.done" (click)="markAsUndone(todo)">refazer</button> | 
-    <button (click)="remove(todo)">remover</button></p>
-
-    <form [formGroup]="form">
-      <fieldset>
-        <label>Tarefa: </label>
-        <input type="text"
-        placeholder="título da tarefa"
-        maxlength="60"
-        formControlName="title">
-        <small *ngIf="form.controls['title'].invalid && !form.controls['title'].pristine">Este campo deve conter de 3 a 60 caracteres</small>
-        <button [disabled]="form.invalid" (click)="add()">Salvar</button>
-      </fieldset>
-    </form>
--->
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

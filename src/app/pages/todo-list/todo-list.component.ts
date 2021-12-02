@@ -1,36 +1,48 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Task, TaskPriority } from './../../models/task.model'
+import { TodoListService } from './../../services/todo-list.service';
+
+import { Task } from './../../models/task.model'
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.css'],
+  providers: [TodoListService]
 })
 export class TodoListComponent implements OnInit {
 
-  taskList: Task[] = [];
+  tasksList$?: Observable<Task[]>;
+  sub?: Subscription;
 
-  constructor() { }
+  constructor(private todoListService: TodoListService) { }
 
   ngOnInit(): void {
-    this.taskList = [
-      {
-        title: "Assistir a aula do curso Santander Coders",
-        description: "Devo reassistir a última aula de Angular para revisar o conteúdo.",
-        dueDate: new Date(),
-        priority: TaskPriority.Low,
-        labels: [],
-      },
-      {
-        title: "Fazer a Atividade 05 da Forca 2.0",
-        description: "Devo reunir com meu grupo, implementar e testar o trabalho.",
-        dueDate: new Date(),
-        priority: TaskPriority.High,
-        labels: [],
-      }
-    ]
+    this.tasksList$ = this.todoListService.getTasks();
 
+    this.tasksList$?.subscribe({
+      next: () => console.log("Acessei o dado!"),
+      error: (error) => console.log(error),
+      complete: () => console.log("Acesso finalizado!")
+    }, );
+
+    /* this.sub = this.todoListService.getTasks().subscribe((tasksList: Task[]) => {
+      this.tasksList = tasksList;
+    }); */
+    
+/*     setTimeout(() => sub.unsubscribe(), 2100); */
   }
 
+
+  markTaskAsDone(obj: { id: number; value: boolean }) {
+    /* let id = obj.id;
+    const done = obj.value;
+
+    this.tasksList[id].done = done;
+    console.log(this.tasksList[id].done); */
+  }
+  ngOnDestroy() {
+    /* this.sub?.unsubscribe(); */
+  }
 }

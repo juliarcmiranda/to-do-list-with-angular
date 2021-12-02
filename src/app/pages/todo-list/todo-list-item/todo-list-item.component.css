@@ -1,0 +1,16 @@
+.bg-red {
+background-color: #ffbdbd;
+}
+.bg-orange {
+    background-color: #fcdfbb;
+}
+.bg-yellow {
+    background-color: #fcfbbb;
+}
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
