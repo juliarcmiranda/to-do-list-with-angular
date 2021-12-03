@@ -29,7 +29,7 @@ export class TodoListService {
   }
 
   addTask(task: Task): Observable<any> {
-    this.router.navigate(['']);
+    this.router.navigate(['home']);
     return this.http.post('http://localhost:3000/tasks', task, httpOptions);
   }
   

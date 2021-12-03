@@ -5,3 +5,10 @@
     width: 500px;
     
 }
+h2 {
+    font-family: 'Itim', cursive;
+    font-size: 24px;
+ }
+button {
+    font-size: 16px;
+ }

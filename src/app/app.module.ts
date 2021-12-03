@@ -14,11 +14,13 @@ import { TodoListComponent } from './pages/todo-list/todo-list.component';
 
 import { AppComponent } from './app.component';
 import { ViewTaskComponent } from './view-task/view-task.component';
+import { CustomizedDirectivesComponent } from './customized-directives/customized-directives.component';
 
 @NgModule({ 
   declarations: [
     AppComponent,
-    ViewTaskComponent
+    ViewTaskComponent,
+    CustomizedDirectivesComponent
   ],
   imports: [
     BrowserModule,

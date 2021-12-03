@@ -1,4 +1,3 @@
-import { Subscription } from 'rxjs';
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 

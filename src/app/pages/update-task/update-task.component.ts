@@ -28,8 +28,7 @@ export class UpdateTaskComponent implements OnInit {
   ngOnInit(): void {
     this.path = this.route.snapshot.url[0].path;
 
-    if (this.path === "update-task") {
-      this.isUpdating = true;
+    this.isUpdating = true;
       this.id = this.route.snapshot.params['id'];
       this.todoListService.getTaskById(this.id!).subscribe({
         next: (data) => this.task = data,
@@ -41,8 +40,8 @@ export class UpdateTaskComponent implements OnInit {
           })
         }
       });
+      
       this.sub?.unsubscribe;
-    }
   }
 
   onSubmit() {
@@ -51,6 +50,6 @@ export class UpdateTaskComponent implements OnInit {
     this.task.priority = this.taskForm?.value.priority;
     console.log(this.task);
     this.todoListService.updateTask(this.task).subscribe({});
-    this.router.navigate(['']);
+    this.router.navigate(['home']);
   }
 }

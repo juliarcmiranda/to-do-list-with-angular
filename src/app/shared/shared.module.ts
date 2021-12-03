@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from './../material/material.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { HeaderComponent } from './header/header.component';
+import { RoseBackgroundDirective } from './header/rose-background.directive';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    RoseBackgroundDirective
   ],
   imports: [
     CommonModule,

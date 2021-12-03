@@ -11,13 +11,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mouse-pointer {
     cursor: pointer;
-    font-size: 24px;
+    font-size: 26px;
+    padding: 0;
+    font-family: 'Itim', cursive;
 }
 mat-toolbar {
     background-color: #cca1b6;
-    height: 50px;
+    height: 60px;
     color: white;
 }
 button {
     margin-left: 5px;
+    font-size: 14px;
+}
+#sequelei {
+ font-size: 14px;   
+margin-left: 10px;
+padding: 0 5px;
 }

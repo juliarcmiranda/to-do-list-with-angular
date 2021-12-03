@@ -7,12 +7,15 @@ import { CreateTaskComponent } from './pages/create-task/create-task.component';
 import { UpdateTaskComponent } from './pages/update-task/update-task.component';
 import { ViewTaskComponent } from './view-task/view-task.component';
 
+import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
-  { path: '', component: TodoListComponent},
+  { path: 'home', component: TodoListComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent},
-  { path: 'create-task', component: CreateTaskComponent},
-  { path: 'update-task/:id', component: UpdateTaskComponent},
-  { path: 'view-task/:id', component: ViewTaskComponent}
+  { path: 'create-task', component: CreateTaskComponent, canActivate: [AuthGuard]},
+  { path: 'home/update-task/:id', component: UpdateTaskComponent, canActivate: [AuthGuard]},
+  { path: 'home/view-task/:id', component: ViewTaskComponent, canActivate: [AuthGuard]},
+  { path:  '**', redirectTo: 'home'}
 ];
 
 @NgModule({

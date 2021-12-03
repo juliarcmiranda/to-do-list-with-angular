@@ -1,7 +1,9 @@
-<mat-toolbar color="basic">
-    <span class="mouse-pointer" routerLink="">To Do List Project</span>
+<mat-toolbar color="basic" *ngIf="render">
+    <span class="mouse-pointer" routerLink="home">To Do List Project</span>
     <span class="spacer"></span>
-    <button mat-stroked-button routerLinkActive="active-border" routerLink="login" color="basic">Login</button>
+
+    <span id="sequelei" roseBackground>sequelei</span>
+    <button mat-stroked-button routerLinkActive="active-border" (click)="logOut()" color="basic">Logout</button>
     <button mat-stroked-button routerLinkActive="active-border" routerLink="create-task" color="basic">Create Task</button>
-    <button mat-stroked-button routerLinkActive="active-border" routerLink="view-task" color="basic">View Task</button>
+    <button mat-stroked-button routerLinkActive="active-border" routerLink="home" color="basic">All Tasks</button>
 </mat-toolbar>

@@ -5,6 +5,7 @@
 }
 mat-card-title {
     margin: 20px 0;
+    font-size: 24px;
 }
 .goback {
     margin-bottom: 20px;
@@ -12,3 +13,9 @@ mat-card-title {
 #space {
     padding-bottom: 15px;
 }
+.font {
+    font-family: 'Itim', cursive;
+ }
+ mat-card-content {
+     font-size: 14px;
+ }

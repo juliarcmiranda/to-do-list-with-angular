@@ -1,6 +1,6 @@
 <div *ngIf="task" class="item-container">
     <mat-card>
-        <mat-card-title>
+        <mat-card-title class="font">
             <mat-checkbox color="primary" [checked]="task.done" (change)="markAsDone($event)"></mat-checkbox>
             {{task.title}}
         </mat-card-title>

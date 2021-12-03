@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 let url = 'http://localhost:3000/tasks';
+
 @Component({
   selector: 'app-view-task',
   templateUrl: './view-task.component.html',
@@ -25,21 +26,12 @@ export class ViewTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.path = this.route.snapshot.url[0].path;
-
-    if (this.path === "view-task") {
-      this.isViewing = true;
+    this.isViewing = true;
       this.id = this.route.snapshot.params['id'];
       this.todoListService.getTaskById(this.id!).subscribe({
         next: (data) => this.task = data,
         complete: () => {        
-          /*   this.todoListService.updateTask(this.task).subscribe({}) */
         }
-      })
-    }
-  }
-  callDelete(id: number) {
-    this.todoListService.deleteTask(id).subscribe();
-    window.location.reload();
-  }
-  
+      });
+  }  
 }
