@@ -1,8 +1,8 @@
+import { Subscription } from 'rxjs';
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
 import { TodoListService } from './../../../services/todo-list.service';
-
 import { Task, TaskPriority } from './../../../models/task.model';
 
 @Component({
@@ -14,20 +14,11 @@ import { Task, TaskPriority } from './../../../models/task.model';
 export class TodoListItemComponent implements OnInit {
 
   @Input('taskObj') task?: Task;
-  /* {
-    id: '',
-    title: '',
-    description: '',
-    priority: TaskPriority.Low,
-    done: false
-  } */
   @Input() taskId?: number;
-  @Output() warnTaskWasDone: EventEmitter<any> = new EventEmitter();
-  @ViewChild('checkboxInput') checkboxInput?: ElementRef;
 
   tasksList: Task[] = [];
 
-  constructor() { }
+  constructor(private todoListService: TodoListService) { }
 
   ngOnInit(): void { }
 
@@ -45,8 +36,14 @@ export class TodoListItemComponent implements OnInit {
     }
   }
 
-  markAsDone(event: MatCheckboxChange) {
-    console.log(this.checkboxInput);
-    this.warnTaskWasDone.emit({ id: this.taskId, value: event.checked });
+  callDelete(id: number) {
+    this.todoListService.deleteTask(id).subscribe();
+    window.location.reload();
   }
-}
+
+  markAsDone($event: MatCheckboxChange) {
+    this.task!.done = $event.checked;
+    this.todoListService.updateTask(this.task!).subscribe({});
+    }
+  }
+

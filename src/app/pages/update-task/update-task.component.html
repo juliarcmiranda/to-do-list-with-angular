@@ -1,6 +1,6 @@
 <mat-card>
     <h2>Update Task</h2>
-    <form>
+    <form class="form-group" *ngIf="taskForm" [formGroup]="taskForm!" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="outline" hideRequiredMarker>
             <mat-label>Task Title</mat-label>
             <input matInput formControlName="title" placeholder="Write a title" required>
@@ -22,4 +22,4 @@
 </mat-card>
 
 
-<!-- *ngIf="taskForm" [formGroup]="taskForm!" class="form-group" (ngSubmit)="onSubmit()" -->
+<!-- *ngIf="taskForm" [formGroup]="taskForm!" (ngSubmit)="onSubmit()" -->

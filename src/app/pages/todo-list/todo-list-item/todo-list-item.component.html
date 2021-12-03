@@ -1,5 +1,5 @@
 <div *ngIf="task" class="item-container">
-    <mat-checkbox #checkboxInput [checked]="task.done" (change)="markAsDone($event)"></mat-checkbox>
+    <mat-checkbox [checked]="task.done" (change)="markAsDone($event)"></mat-checkbox>
     <mat-expansion-panel *ngIf="task" style="flex: 1; margin-left: 10px;">
         <mat-expansion-panel-header>
             <span id="priority-color" [ngClass]="getClass()"></span>
@@ -19,10 +19,10 @@
         <ng-content></ng-content>
     </mat-expansion-panel>
     <div class="button-place">
-        <button mat-icon-button [routerLink]="['updatetask', task.id]">
+        <button mat-icon-button [routerLink]="['update-task', task.id]">
             <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="callDelete(task.id)">
             <mat-icon>delete</mat-icon>
         </button>
     </div>

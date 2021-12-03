@@ -1,9 +1,9 @@
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 
 import { TodoListService } from './../../services/todo-list.service';
-
 import { Task } from './../../models/task.model'
-import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-todo-list',
@@ -32,14 +32,6 @@ export class TodoListComponent implements OnInit {
     }); */
     
 /*     setTimeout(() => sub.unsubscribe(), 2100); */
-  }
-
-  markTaskAsDone(obj: { id: number; value: boolean }) {
-    /* let id = obj.id;
-    const done = obj.value;
-
-    this.tasksList[id].done = done;
-    console.log(this.tasksList[id].done); */
   }
   ngOnDestroy() {
     /* this.sub?.unsubscribe(); */

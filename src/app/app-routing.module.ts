@@ -9,8 +9,8 @@ import { UpdateTaskComponent } from './pages/update-task/update-task.component';
 const routes: Routes = [
   { path: '', component: TodoListComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'createtask', component: CreateTaskComponent},
-  { path: 'updatetask/:id', component: UpdateTaskComponent}
+  { path: 'create-task', component: CreateTaskComponent},
+  { path: 'update-task/:id', component: UpdateTaskComponent}
 ];
 
 @NgModule({

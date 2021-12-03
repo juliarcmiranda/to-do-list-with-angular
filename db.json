@@ -2,29 +2,15 @@
   "tasks": [
     {
       "id": 1,
-      "title": "Assistir a aula do curso Santander Coders",
-      "description": "Devo reassistir a última aula de Angular para revisar o conteúdo.",
-      "priority": "Low",
-      "done": false
+      "title": "lei dos senos",
+      "description": "kamuzzi",
+      "priority": "Medium",
+      "done": true
     },
     {
-      "id": 2,
-      "title": "Fazer a Atividade 05 da Forca 2.0",
-      "description": "Devo reunir com meu grupo, implementar e testar o trabalho.",
-      "priority": "High",
-      "done": false
-    },
-    {
-      "id": 3,
-      "title": "Teste",
-      "description": "Teste",
-      "priority": "Low",
-      "done": false
-    },
-    {
-      "id": 6624,
-      "title": "Fazer o CRUD do trabalho",
-      "description": "Falta Update e Delete",
+      "id": 130570,
+      "title": "Lavar a loussa",
+      "description": " Cebola",
       "priority": "High",
       "done": false
     }
