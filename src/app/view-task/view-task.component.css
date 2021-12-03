@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+}
+mat-card-title {
+    margin: 20px 0;
+}
+.goback {
+    margin-bottom: 20px;
+}
+#space {
+    padding-bottom: 15px;
+}

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -17,7 +16,6 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     MatToolbarModule,
-    MatExpansionModule,
     MatCardModule,
     MatCheckboxModule,
     MatProgressSpinnerModule,
@@ -29,7 +27,6 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   exports: [
     MatToolbarModule,
-    MatExpansionModule,
     MatCardModule,
     MatCheckboxModule,
     MatProgressSpinnerModule,

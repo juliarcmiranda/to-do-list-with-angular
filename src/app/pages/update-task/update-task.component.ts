@@ -5,6 +5,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 import { TodoListService } from './../../services/todo-list.service';
+import { Task, TaskPriority } from './../../models/task.model';
 
 let url = 'http://localhost:3000/tasks';
 

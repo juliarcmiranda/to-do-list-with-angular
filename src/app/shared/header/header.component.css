@@ -6,9 +6,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .active-border {
-    border: 2px solid rgb(96, 162, 238);
+    border: 2px solid #f6f6f6;
 }
 
 .mouse-pointer {
     cursor: pointer;
+    font-size: 24px;
+}
+mat-toolbar {
+    background-color: #cca1b6;
+    height: 50px;
+    color: white;
+}
+button {
+    margin-left: 5px;
 }
